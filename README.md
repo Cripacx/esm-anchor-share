@@ -94,6 +94,23 @@ The jars end up in `fabric/build/libs` and `neoforge/build/libs`.
 
 Releases are automatic: every push to `main` is built and tested, and when `version` in `gradle.properties` has no GitHub release yet, the workflow publishes `v<version>` with both jars. To release, bump the version and push.
 
+### Publishing to Modrinth
+
+The same workflow uploads both jars to Modrinth as `<version>+<minecraft>-fabric` and `<version>+<minecraft>-neoforge`, with ESM (and Fabric API for Fabric) as required dependencies. Versions already on Modrinth are skipped, so a failed upload is retried on the next push. To enable it:
+
+1. Create the project on Modrinth and note its slug or id.
+2. Create a personal access token at https://modrinth.com/settings/pats with the scopes *Create versions*, *Read projects* and *Read versions*.
+3. Store both in the repository:
+
+   ```bash
+   gh secret set MODRINTH_TOKEN
+   gh variable set MODRINTH_PROJECT --body <slug-or-id>
+   ```
+
+4. Re-run the latest workflow run, or push to `main`.
+
+Until both are set, the step is skipped with a notice.
+
 Tests:
 
 - `./gradlew :common:test` covers encoding and validation.
