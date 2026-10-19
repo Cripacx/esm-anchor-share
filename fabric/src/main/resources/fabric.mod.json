@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${version}",
+  "name": "${mod_name}",
+  "description": "${description}",
+  "authors": [
+    "${mod_author}"
+  ],
+  "contact": {
+    "homepage": "https://github.com/Cripacx/esm-anchor-share",
+    "sources": "https://github.com/Cripacx/esm-anchor-share",
+    "issues": "https://github.com/Cripacx/esm-anchor-share/issues"
+  },
+  "license": "${license}",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.cripacx.esmanchorshare.fabric.AnchorShareFabric"
+    ],
+    "client": [
+      "com.cripacx.esmanchorshare.fabric.AnchorShareFabricClient"
+    ]
+  },
+  "mixins": [
+    "esmanchorshare.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${fabric_loader_version}",
+    "fabric-api": "*",
+    "minecraft": ">=${minecraft_version}",
+    "java": ">=${java_version}"
+  },
+  "recommends": {
+    "extremesoundmuffler": ">=4.05"
+  }
+}

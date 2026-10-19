@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.cripacx.esmanchorshare.mixin",
+  "plugin": "com.cripacx.esmanchorshare.mixin.MixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "EsmAnchorMixin",
+    "MufflerScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

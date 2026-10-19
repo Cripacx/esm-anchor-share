@@ -1,0 +1,33 @@
+modLoader = "javafml"
+loaderVersion = "${neoforge_loader_version_range}"
+license = "${license}"
+issueTrackerURL = "https://github.com/Cripacx/esm-anchor-share/issues"
+[[mods]]
+    modId = "${mod_id}"
+    version = "${version}"
+    displayName = "${mod_name}"
+    displayURL = "https://github.com/Cripacx/esm-anchor-share"
+    credits = "${credits}"
+    authors = "${mod_author}"
+    description = '''${description}'''
+[[mixins]]
+    config = "${mod_id}.mixins.json"
+[[dependencies."${mod_id}"]]
+    modId = "neoforge"
+    type = "required"
+    versionRange = "[${neoforge_version},)"
+    ordering = "NONE"
+    side = "BOTH"
+[[dependencies."${mod_id}"]]
+    modId = "minecraft"
+    type = "required"
+    versionRange = "${minecraft_version_range}"
+    ordering = "NONE"
+    side = "BOTH"
+# ESM is client-only; the dedicated server runs this addon without it
+[[dependencies."${mod_id}"]]
+    modId = "extremesoundmuffler"
+    type = "required"
+    versionRange = "${esm_version_range}"
+    ordering = "AFTER"
+    side = "CLIENT"

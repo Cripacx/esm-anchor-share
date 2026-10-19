@@ -1,0 +1,4 @@
+plugins {
+    id 'net.fabricmc.fabric-loom' version "${fabric_loom_version}" apply false
+    id 'net.neoforged.moddev' version "${neo_moddev_version}" apply false
+}
