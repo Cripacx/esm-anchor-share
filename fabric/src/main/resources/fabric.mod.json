@@ -13,6 +13,7 @@
     "issues": "https://github.com/Cripacx/esm-anchor-share/issues"
   },
   "license": "${license}",
+  "icon": "esmanchorshare_logo.png",
   "environment": "*",
   "entrypoints": {
     "main": [
